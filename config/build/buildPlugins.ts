@@ -12,6 +12,9 @@ export function buildPlugins({paths}: BuildOptions): webpack.WebpackPluginInstan
     new webpack.ProgressPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:0].css'
+    }),
+    new webpack.DefinePlugin({
+      __IS_DEV__: JSON.stringify(true)
     })
   ]
 }
